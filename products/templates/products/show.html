@@ -19,8 +19,13 @@
         <th>Rating</th>
     </thead>
     <tbody>
-
-        {# Add the contents of the review table here #}
+      {% for review in product.review_set.all %}
+        <tr>
+          <td>{{review.review}}</td>
+          <td> {{review.stars}}</td>
+        </tr>
+      {% endfor %}
+      
 
     </tbody>
 </table>
@@ -28,8 +33,9 @@
 
 <section>
 
-{# Add button/link to get to the review form here #}
-
+{% if user.is_authenticated %}
+  <a class="review btn" href="{% url 'createreview' product.id %}">Create Review</a>
+{% endif %}
 </section>
 
 {% endblock %}
