@@ -12,5 +12,7 @@ I thought it was pretty straightforward. I spent most of my time getting the for
 
 ## Feedback
 
-Once you commit and submit your work to Github, I'll update this section with feedback.
+N
+
+There's one bug: if you don't fill in anything valid in the review form, you get a server crash.  The fix is to dedent the last two lines in your `createreview` function so that you will just re-render the form.  Right now, you won't render anything because of the structure of the code in that function (and that's what causes the crash).
 
